@@ -8,6 +8,6 @@ const outputMock = data => {
 
 const src = `--[----->+<]>.+++++++++..`
 const interpreter = InterpreterFactory({ output: outputMock })
-interpreter(src)
-
-assert.strictEqual(output, 'foo')
+interpreter(src).then(() => {
+  assert.strictEqual(output, 'foo')
+})
